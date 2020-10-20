@@ -6,6 +6,12 @@ export default {
   history: {
     type: 'hash'
   },
+  targets: {
+    android: 5,
+    ios: 7,
+    chrome: 58,
+    ie: 11
+  },
   //配置代理
   proxy: {
     '/ump': {
@@ -22,7 +28,9 @@ export default {
 
   cssLoader: {
     localsConvention: 'camelCase'
-  }
+  },
+
+  extraPostCSSPlugins: [require('postcss-adaptive')({ remUnit: 37.5, autoRem: true })]
 
   // routes: [
   //   { path: '/', component: './TestPage/index.tsx' },
